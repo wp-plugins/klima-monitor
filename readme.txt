@@ -1,5 +1,5 @@
 ﻿=== Klima Monitor ===
-Tags: Raspberry Pi, GrovePi+, Wetter, Klima, Temperatur, Luftfeuchtigkeit, Luftdruck, Bodenfeuchtigkeit
+Tags: Raspberry Pi, GrovePi+, Wetter, Klima, Temperatur, Luftfeuchtigkeit, Luftdruck
 Contributors: mayerst
 Requires at least: 3.0.1
 Tested up to: 4.1.1
@@ -41,11 +41,13 @@ Meine eMail Adresse lautet: info@2komma5.org
 
 1. Wettervorhersage
 
-2. Wochenübersicht der Temperatur
+2. Wochenübersicht der Luftfeuchte
 
 3. Wochenübersicht des Luftdrucks
 
-4. Einstellungen
+4. Verlauf der Vorhersage
+
+5. Einstellungen
 
 == Changelog ==
 
@@ -58,7 +60,7 @@ title   - Definition des Titels z.B.: title="Dies ist ein Titel"
 
 trendline - "yes" , "no"; default ist "no"
 
-chart 	- Definition der Anzeige, "temp" , "temphum, "hum", "press" oder "dew" z.B.: char="temp"
+chart 	- Definition der Anzeige, z.B.: char="temp"
 
 			temp    - zeigt nur die Temperaturen
 			
@@ -72,7 +74,7 @@ chart 	- Definition der Anzeige, "temp" , "temphum, "hum", "press" oder "dew" z.
 			
 			hums	- zeigt die spez. Feuchte und die Sättigungsfeuchte
 			
-			forecast - zeigt den Verlauf des Vorhersagetrends an
+			forecast - zeigt den Verlauf der Vorhersage
 
 day   	- Definition des Anzeigebereichs, "Today", "Yesterday", "Week", "Month", "Year" 
           z.B.: day="Week" Anzeige der Daten der letzten 7 Tage
