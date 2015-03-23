@@ -50,7 +50,7 @@ function cm_setting_section_callback_function()
 
 function cm_setting_callback_function()
 {
-    echo '<input name="cm_db_delete" id="cm_db_delete" type="checkbox" value="1" class="code" ' . checked(1, get_option('cm_db_delete'), false) . ' /> Beim Deaktivieren des Plugin wird die Tabelle gelöscht!';
+    echo '<input name="cm_db_delete" id="cm_db_delete" type="checkbox" value="1" class="code" ' . checked(1, get_option('cm_db_delete'), false) . ' /> Beim Deaktivieren des Plugin, wird die Tabelle gelöscht!';
 }
 
 
@@ -411,8 +411,11 @@ function cm_visualization_line_chart_shortcode($atts, $content = null)
     foreach ($resultSet as $row) {
         
         $dateMeasured = $row['dateMeasured'];
-        $timeStamp    = $row['timeStamp'];
-        $temperature  = $row['temperature'];
+		$timeArray = split(" ",$row['timeStamp']);
+		$date = split("-",($timeArray[0]));
+		$time = split(":",($timeArray[1]));
+		$timeStamp = $date[0] . "," . ($date[1]-1) . "," . $date[2] . "," . $time[0] . "," . $time[1] . "," . $time[2]; 
+		$temperature  = $row['temperature'];
         $hum          = $row['humidity'];
         $btemp        = $row['btemp'];
         $pressure     = $row['pressure'];
@@ -424,25 +427,25 @@ function cm_visualization_line_chart_shortcode($atts, $content = null)
         
         switch ($chart) {
             case "temp";
-                $graph_draw_js .= '[new Date("' . $timeStamp . '"),' . $temperature . ',' . $btemp . ']';
+                $graph_draw_js .= '[new Date(' . $timeStamp . '),' . $temperature . ',' . $btemp . ']';
                 break;
             case "temphum";
-                $graph_draw_js .= '[new Date("' . $timeStamp . '"),' . $temperature . ',' . $hum . ',' . $btemp . ']';
+                $graph_draw_js .= '[new Date(' . $timeStamp . '),' . $temperature . ',' . $hum . ',' . $btemp . ']';
                 break;
             case "hum";
-                $graph_draw_js .= '[new Date("' . $timeStamp . '"),' . $hum . ']';
+                $graph_draw_js .= '[new Date(' . $timeStamp . '),' . $hum . ']';
                 break;
             case "press";
-                $graph_draw_js .= '[new Date("' . $timeStamp . '"),' . $pressure . ']'; //',' . $altitude . ']';
+                $graph_draw_js .= '[new Date(' . $timeStamp . '),' . $pressure . ']'; //',' . $altitude . ']';
                 break;
 			case "dew";
-                $graph_draw_js .= '[new Date("' . $timeStamp . '"),' . $dewPoint . ']'; 
+                $graph_draw_js .= '[new Date(' . $timeStamp . '),' . $dewPoint . ']'; 
                 break;
 			case "hums";
-                $graph_draw_js .= '[new Date("' . $timeStamp . '"),' . $spezF . ',' . $sattF . ']';
+                $graph_draw_js .= '[new Date(' . $timeStamp . '),' . $spezF . ',' . $sattF . ']';
                 break;
 			case "forecast";
-                $graph_draw_js .= '[new Date("' . $timeStamp . '"),' . $forecast . ']';
+                $graph_draw_js .= '[new Date(' . $timeStamp . '),' . $forecast . ']';
                 break;
 		}
         
@@ -451,6 +454,7 @@ function cm_visualization_line_chart_shortcode($atts, $content = null)
             $graph_draw_js .= ',';
         }
     }
+
     $cm_options = cm_set_title($cm_options);
     $graph_draw_js .= ']);';
     //Create the options
