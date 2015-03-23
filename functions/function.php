@@ -50,7 +50,7 @@ function cm_setting_section_callback_function()
 
 function cm_setting_callback_function()
 {
-    echo '<input name="cm_db_delete" id="cm_db_delete" type="checkbox" value="1" class="code" ' . checked(1, get_option('cm_db_delete'), false) . ' /> Beim Deaktivieren des Plugin, wird die Tabelle gelöscht!';
+    echo '<input name="cm_db_delete" id="cm_db_delete" type="checkbox" value="1" class="code" ' . checked(1, get_option('cm_db_delete'), false) . ' /> Beim Deaktivieren des Plugin wird die Tabelle gelöscht!';
 }
 
 

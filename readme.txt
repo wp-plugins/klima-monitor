@@ -60,7 +60,7 @@ title   - Definition des Titels z.B.: title="Dies ist ein Titel"
 
 trendline - "yes" , "no"; default ist "no"
 
-chart 	- Definition der Anzeige, z.B.: char="temp"
+chart 	- Definition der Anzeige, z.B.: chart="temp"
 
 			temp    - zeigt nur die Temperaturen
 			
