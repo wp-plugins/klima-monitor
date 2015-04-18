@@ -79,7 +79,8 @@ function cm_create_plugin_table()
 	if ("null" == get_option( 'cm_db_version','null')) {
 	
 		$sql = "CREATE TABLE " . $cm_table_name . "(
-			`id` int(255) NOT NULL AUTO_INCREMENT,
+			`timeStamp` datetime NOT NULL,
+			`dateMeasured` date NOT NULL,
 			`forecast` VARCHAR(30) NOT NULL,
 			`trend` VARCHAR(2) NOT NULL,
 			`temperature` double NOT NULL,
@@ -91,9 +92,7 @@ function cm_create_plugin_table()
 			`dewPoint` VARCHAR(20) NOT NULL,
 			`spezF` VARCHAR(20) NOT NULL,
 			`sattF` VARCHAR(20) NOT NULL,
-			`dateMeasured` date NOT NULL,
-			`timeStamp` datetime NOT NULL,
-			PRIMARY KEY (`id`)
+			PRIMARY KEY (`timeStamp`)
 		) " . $charset_collate . ";";
 		require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
 		dbDelta($sql);
@@ -469,7 +468,7 @@ function cm_visualization_line_chart_shortcode($atts, $content = null)
 	if ( 'yes' == $trendline ) {
 		$graph_draw_js .= 'trendlines: {
 							0: {
-								type: "polynomial",
+								type: "exponential",
 								color: "green",
 								lineWidth: 1,
 								opacity: 0.3,
