@@ -3,7 +3,7 @@ Tags: Raspberry Pi, GrovePi+, Wetter, Klima, Temperatur, Luftfeuchtigkeit, Luftd
 Contributors: mayerst
 Requires at least: 3.0.1
 Tested up to: 4.1.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,9 @@ Meine eMail Adresse lautet: info@2komma5.org
 
 = 1.0.0 =
 * Initial release
+
+= 1.0.1 =
+* Bug fixing: function cm_read_db
   
 == Einstellmöglichkeiten ==
 
@@ -60,7 +63,7 @@ title   - Definition des Titels z.B.: title="Dies ist ein Titel"
 
 trendline - "yes" , "no"; default ist "no"
 
-chart 	- Definition der Anzeige, z.B.: chart="temp"
+chart 	- Definition der Anzeige, z.B.: char="temp"
 
 			temp    - zeigt nur die Temperaturen
 			

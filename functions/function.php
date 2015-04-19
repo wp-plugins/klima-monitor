@@ -4,7 +4,7 @@ global $wpdb;
 global $cm_db_version;
 $cm_db_version = '1.0';
 global $cm_plugin_version;
-$cm_plugin_version = '1.0.0';
+$cm_plugin_version = '1.0.1';
 // Store the IDs of the generated graphs
 global $cm_graphs_id;
 // Store the IDs of the generated graphs
@@ -165,7 +165,7 @@ function cm_read_db($day_opt)
             $sql_where = "WHERE YEAR(dateMeasured) = '" . $actYear . "'";
             break;
 		case "latest":
-            $sql_where = "WHERE dateMeasured='" . date('y-m-d') . "' ORDER BY id DESC LIMIT 1";
+            $sql_where = "WHERE dateMeasured='" . date('y-m-d') . "' ORDER BY timeStamp DESC LIMIT 1";
             break;	
     }
     $sql       = "SELECT * FROM " . $cm_table_name . " " . $sql_where;

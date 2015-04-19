@@ -3,7 +3,7 @@
  * Plugin Name: Klima Monitor
  * Plugin URI: www.2komma5.org
  * Description: Dieses Plugin ermöglicht die Darstellung einer Wettervorhersage, welche mit dem RaspberryPi berechnet wurde. 
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Stefan Mayer
  * Author URI: http://www.2komma5.org
  * License: GPL2
