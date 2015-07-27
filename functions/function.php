@@ -4,7 +4,7 @@ global $wpdb;
 global $cm_db_version;
 $cm_db_version = '1.0';
 global $cm_plugin_version;
-$cm_plugin_version = '1.0.1';
+$cm_plugin_version = '1.0.2';
 // Store the IDs of the generated graphs
 global $cm_graphs_id;
 // Store the IDs of the generated graphs
@@ -268,7 +268,7 @@ function cm_forecast_shortcode($atts, $content = null)
 	$content .= "<p>Sättigungsfeuchte:</p>";
 	$content .= "<td>";
 	$content .= "<p>" . round($dewPoint,2) . " °C</p>";
-	$content .= "<p>" . round($spezF,2) . " g/m^3</p>";
+	$content .= "<p>" . round($spezF,2) . " g/kg</p>";
 	$content .= "<p>" . round($sattF,2) . " g/m^3</p>";
     $content .= "</td>";
 	$content .= "</tbody>";

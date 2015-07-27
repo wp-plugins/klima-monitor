@@ -2,8 +2,8 @@
 Tags: Raspberry Pi, GrovePi+, Wetter, Klima, Temperatur, Luftfeuchtigkeit, Luftdruck
 Contributors: mayerst
 Requires at least: 3.0.1
-Tested up to: 4.1.1
-Stable tag: 1.0.1
+Tested up to: 4.2.3
+Stable tag: 1.0.2
 License: GPL2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,9 @@ Meine eMail Adresse lautet: info@2komma5.org
 
 = 1.0.1 =
 * Bug fixing: function cm_read_db
+
+= 1.0.2 =
+* Bug fixing: Einheit der spez. Luftfeuchte
   
 == Einstellmöglichkeiten ==
 
