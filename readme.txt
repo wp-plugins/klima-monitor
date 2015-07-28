@@ -14,6 +14,8 @@ Dieses Plugin ermöglicht die Darstellung einer Wettervorhersage, welche mit dem
 Dieses Plugin ermöglicht die Darstellung einer Wettervorhersage, welche mit dem RaspberryPi berechnet wurde. Die notwendigen Daten werden durch Sensoren am GrovePi+ Shield ermittelt. 
 Aktuell werden Temperatur, Luftfeuchtigkeit und Luftdruck gemessen. Die gemessenen und berechneten Daten, werden in der Wordpress Datenbank gespeichert und sind durch Liniendiagramme darstellbar.  
 
+Über eine Mail mit dem Einsatzgebiet des Klimamonitors würde ich mich freuen. 
+
 == Installation ==
 
 1. Installiere das Plugin in */wp-content/plugins Verzeichnis
